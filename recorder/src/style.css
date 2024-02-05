@@ -1,0 +1,10 @@
+.style{
+    font-family: Georgia ;
+    font-weight: bold;
+    display: flex
+}
+
+.buttons{
+margin-right: 2 rem;
+}
+
