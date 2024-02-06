@@ -24,13 +24,6 @@ function App() {
     setIsUploading(true);
 
     try {
-      // stopRecording();
-      // // // const blob = await fetch(mediaBlobUrl).then(res => res.blob());
-      // const blob = new Blob([mediaBlobUrl], { type: "video/mp4" });
-      // const formData = new FormData();
-      // formData.append('recorded_data', blob,  'recorded-video.mp4');
-
-      // const response = await axios.post('http://localhost:4000/PostRecordedVideos', formData, config);
 
       if (status === 'recording') {
         stopRecording();
@@ -43,7 +36,6 @@ function App() {
       const formData = new FormData();
       formData.append('recorded_data', blob, `recorded-video-${Date.now()}.mp4`);
 
-      // Send the formData to the server
       const response = await axios.post('http://localhost:4000/PostRecordedVideos', formData, config);
 
       if (response.status === 200) {
@@ -106,7 +98,6 @@ function App() {
           {recordedData.map((record, id) => (
             <div key={id}>
               <div style={{ height: "20rem", width: "20rem", margin: "2rem" }}>
-                {/* <video src={record.recorded_data} controls style={{ height: "100%", width: "100%" }}></video> */}
                 <video controls style={{ height: "100%", width: "100%" }}>
                   <source src={record.recorded_data} type="video/mp4" />
                   Your browser does not support the video tag.

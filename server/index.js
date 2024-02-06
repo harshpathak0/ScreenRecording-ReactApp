@@ -23,7 +23,7 @@ const port = 4000;
 
 // Configure AWS SDK with your credentials
 const s3 = new S3Client({
-  region: 'ap-south-1',
+  region: process.env.AWS-REGION,
   credentials: {
     accessKeyId: process.env.AWS-ACCESS-KEY,
     secretAccessKey: process.env.AWS-SECRET-KEY ,
