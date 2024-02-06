@@ -56,7 +56,7 @@ let storage = multerS3({
   },
   contentType: multerS3.AUTO_CONTENT_TYPE,
   key: (req, file, cb) => {
-    const uniqueIdentifier = Date.now(); // or use any method to generate a unique identifier
+    const uniqueIdentifier = Date.now(); 
     const originalFileName = file.originalname;
     const newFileName = `${uniqueIdentifier}_${originalFileName}`;
     console.log(newFileName)
